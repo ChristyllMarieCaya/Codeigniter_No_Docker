@@ -10,39 +10,29 @@ use App\Models\PersonModels;
 class Person extends Controller
 {
     public function index(){
-        $model = new UserModel();
-        $data['person'] = $model->findAll();
-        return view('person/index', $data);
+        $model = new PersonModels();
+        $data['users'] = $model->findAll();
+        return view('users/index', $data);
     }
 
     public function save(){
         $name = $this->request->getPost('name');
-        $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
-        $role = $this->request->getPost('role');
-        $status = $this->request->getPost('status');
-        $phone = $this->request->getPost('phone');
+        $bday = $this->request->getPost('bday');
+      
 
-        if (!$email || !$password) {
-            return $this->response->setJSON(['status' => 'error', 'message' => 'Email and password are required']);
-        }
-
-        $userModel = new \App\Models\UserModel();
+       
+        $userModel = new \App\Models\PersonModels();
         $logModel = new LogModel();
 
         // Check if email already exists
-        $existingUser = $userModel->where('email', $email)->first();
+        $existingUser = $userModel->where('bday', $bday)->first();
         if ($existingUser) {
             return $this->response->setJSON(['status' => 'error', 'message' => 'Email is already in use']);
         }
 
         $data = [
             'name'       => $name,
-            'email'      => $email,
-            'password'   => password_hash($password, PASSWORD_DEFAULT),
-            'role'       => $role,
-            'status'     => $status,
-            'phone'      => $phone,
+            'bday'      => $bday,
             'updated_at' => date('Y-m-d H:i:s'),
             'deleted_at' => date('Y-m-d H:i:s')
         ];
@@ -145,7 +135,7 @@ public function delete($id){
 public function fetchRecords()
 {
     $request = service('request');
-    $model = new \App\Models\PersonModels();
+    $model = new \App\Models\UserModel();
 
     $start = $request->getPost('start') ?? 0;
     $length = $request->getPost('length') ?? 10;

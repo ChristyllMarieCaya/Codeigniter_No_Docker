@@ -69,43 +69,9 @@
               </div>
 
               <div class="form-group">
-                <label>Email</label>
-                <input type="email" name="email" class="form-control" required />
+                <label>Birthday</label>
+                <input type="date" name="bday" class="form-control" required />
               </div>
-              <div class="form-group">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" required />
-              </div>
-
-              <div class="row">
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label>Role</label>
-                    <select class="form-control" name="role">
-                      <option value="Admin">Admin</option>
-                      <option value="User">User</option>
-                      <option value="Guest">Guest</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-sm-6">
-                 <div class="form-group">
-                  <label>Status</label>
-                  <select class="form-control" name="status">
-                    <option value="Active">Active</option>
-                    <option value="In Active">In Active</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input type="text" name="phone" class="form-control" required />
-            </div>
-          </div>
-
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class='fas fa-times-circle'></i> Cancel</button>
             <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
@@ -136,52 +102,13 @@
               </div>
 
             <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" required>
+              <label for="bday">Birthday</label>
+              <input type="date" class="form-control" id="bday" name="bday" required>
             </div>
 
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" name="password">
-            </div>  
+           
 
-             <div class="row">
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <label>Role</label>
-                    <select class="form-control" name="role" id="role">
-                      <option value="Admin">Admin</option>
-                      <option value="User">User</option>
-                      <option value="Guest">Guest</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="col-sm-6">
-                 <div class="form-group">
-                  <label>Status</label>
-                  <select class="form-control" name="status" id="status">
-                    <option value="Active">Active</option>
-                    <option value="In Active">In Active</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input type="text" name="phone" id="phone" class="form-control" required />
-            </div>        
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class='fas fa-times-circle'></i> Cancel</button>
-            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+    
 </section>
 </div>
 <div class="toasts-top-right fixed" style="position: fixed; top: 1rem; right: 1rem; z-index: 9999;"></div>
